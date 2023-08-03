@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Lato&display=swap');
+
+
+*{-webkit-transition: all 0.4s ease-out!important;-moz-transition:  all 0.4s ease-out!important;-ms-transition: all 0.4s ease-out!important;-o-transition:  all 0.4s ease-out!important;
+transition: all 0.4s ease-out!important;}
+
+/* MANSONRY */
+
+.gal
+{
+	margin-top:3rem;
+	-webkit-column-count: 4;
+	/* Chrome, Safari, Opera */
+	-moz-column-count: 4;
+	/* Firefox */
+	column-count: 4;
+}
+
+.gal img
+{
+	height:auto;
+}
+
+@media (max-width: 769px)
+{
+	.gal
+	{
+		-webkit-column-count: 1;
+		/* Chrome, Safari, Opera */
+		-moz-column-count: 1;
+		/* Firefox */
+		column-count: 1;
+	}
+}
+
+/* DESIGN */
+html, body
+{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	color:white;
+}
+
+.overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: -2;
+	mix-blend-mode: hard-light;
+}
+
+.bg
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -3;
+	background-image:url(https://www.jellypir.at/CODEPEN/picture/very/jellyfish_21.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	min-height: 100%;
+}
+
+h2
+{
+	font-family: 'Gloock', serif;
+	font-size:2.6rem;
+}
+
+.gal-h-title
+{
+	text-align:center;
+}
+
+.gal img , .img-hover-zoom
+{
+	border-radius: 25px;
+}
+
+.nav-pills .nav-link
+{
+	color:white;
+	padding:10px 20px;
+	text-transform:uppercase;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link, .nav-pills .nav-link.active:hover
+{
+	background: #4CB8C4;
+  background: linear-gradient(135deg,#523ee8,#00dcaf);
+	border-radius:100px;
+}
+.nav-pills .nav-link:hover
+{
+	background: #4CB8C4;
+background: linear-gradient(135deg,#523ee88c,#00dcaf6e);
+	border-radius:100px;
+}
+
+
+/* ZOOM IN EFFECT */
+/* The tutorial I used : https://w3bits.com/css-image-hover-zoom/ */
+/* [1] The container */
+.img-hover-zoom
+{
+  padding:10px 0;
+	overflow: hidden;
+	/* [1.2] Hide the overflowing of child elements */
+}
+
+/* Transition property for smooth transformation of images */
+.img-hover-zoom img
+{
+	transition: transform .5s ease;
+}
+
+/* Zoom-n-rotate Container */
+.img-hover-zoom--zoom-n-rotate img
+{
+	transition: transform .5s ease-in-out;
+}
+
+/* The Transformation */
+.img-hover-zoom--zoom-n-rotate:hover img
+{
+	transform: scale(1.6) rotate(25deg);
+}
+
+    </style>
+</head>
+<body>
+    
+<div class="overlay"></div>
+<div class="bg"></div></div>
+
+
+<section id="gallery-2" class="gallery m-5">
+	<div class="container-fluid">
+    
+    
+		<div class="row justify-content-center gal-h-title mb-5">
+			<h2>Masonry Gallery With Filters</h2>
+			<p>
+				Luminous jellyfish, dance under the blue moonlight.
+Beneath the starlit sea, a magical ballet takes flight
+			</p>
+		</div>
+    
+    
+    
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6">
+				<ul class="nav nav-pills justify-content-center my-3" id="pills-tab" role="tablist">
+					<li class="nav-item"><button class="nav-link active" id="pills-filter-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">all</button></li>
+					<li class="nav-item"><button class="nav-link" id="pills-filter-1-tab" data-bs-toggle="pill" data-bs-target="#pills-very" type="button" role="tab" aria-controls="pills-very" aria-selected="true">Very</button></li>
+					<li class="nav-item"><button class="nav-link" id="pills-filter-2-tab" data-bs-toggle="pill" data-bs-target="#pills-cute" type="button" role="tab" aria-controls="pills-cute" aria-selected="false">cute</button></li>
+					<li class="nav-item"><button class="nav-link" id="pills-filter-3-tab" data-bs-toggle="pill" data-bs-target="#pills-jellyfish" type="button" role="tab" aria-controls="pills-jellyfish" aria-selected="false">Jellyfish</button></li>
+				</ul>
+			</div>
+		</div>
+    
+    
+    
+		<div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-filter-tab" tabindex="0">
+	<div class="gal">
+
+		
+
+		
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_01.jpg" alt="jellyfish_01">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_02.jpg" alt="jellyfish_02">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_03.jpg" alt="jellyfish_03">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_04.jpg" alt="jellyfish_04">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_05.jpg" alt="jellyfish_05">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_06.jpg" alt="jellyfish_06">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_07.png" alt="jellyfish_07">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_09.png" alt="jellyfish_09">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_10.png" alt="jellyfish_10">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_11.png" alt="jellyfish_11">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_12.png" alt="jellyfish_12">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_13.png" alt="jellyfish_13">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_14.png" alt="jellyfish_14">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_08.png" alt="jellyfish_08">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_15.png" alt="jellyfish_15">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_16.png" alt="jellyfish_16">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_17.png" alt="jellyfish_17">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_18.png" alt="jellyfish_18">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_19.png" alt="jellyfish_19">
+			</div>
+			<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+				<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_20.png" alt="jellyfish_20">
+			</div>
+
+
+	</div>
+</div>
+<div class="tab-pane fade" id="pills-very" role="tabpanel" aria-labelledby="pills-filter-1-tab" tabindex="0">
+	<div class="gal">
+
+	
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_08.png" alt="jellyfish_08">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_15.png" alt="jellyfish_15">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_16.png" alt="jellyfish_16">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_17.png" alt="jellyfish_17">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_18.png" alt="jellyfish_18">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_19.png" alt="jellyfish_19">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_20.png" alt="jellyfish_20">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/very/jellyfish_21.jpg" alt="jellyfish_21">
+		</div>
+
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://nsm09.casimages.com/img/2023/07/18//23071812503325998218215481.png" alt="jelly-13">
+		</div>
+		
+		
+	</div>
+</div>
+<div class="tab-pane fade" id="pills-cute" role="tabpanel" aria-labelledby="pills-filter-2-tab" tabindex="0">
+	<div class="gal">
+
+	
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_01.jpg" alt="jellyfish_01">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_02.jpg" alt="jellyfish_02">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_03.jpg" alt="jellyfish_03">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_04.jpg" alt="jellyfish_04">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_05.jpg" alt="jellyfish_05">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/cute/jellyfish_06.jpg" alt="jellyfish_06">
+		</div>
+		
+	</div>
+</div>
+<div class="tab-pane fade" id="pills-jellyfish" role="tabpanel" aria-labelledby="pills-filter-3-tab" tabindex="0">
+	<div class="gal">
+	
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_07.png" alt="jellyfish_07">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_09.png" alt="jellyfish_09">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_10.png" alt="jellyfish_10">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_11.png" alt="jellyfish_11">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_12.png" alt="jellyfish_12">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_13.png" alt="jellyfish_13">
+		</div>
+		<div class="img-hover-zoom img-hover-zoom--zoom-n-rotate">
+			<img class="img-fluid" src="https://www.jellypir.at/CODEPEN/picture/jellyfish/jellyfish_14.png" alt="jellyfish_14">
+		</div>
+		
+	</div>
+</div>
+
+
+      
+		</div>
+    
+    
+	</div>
+</section>
+</body>
+</html>
